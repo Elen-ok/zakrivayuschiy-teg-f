@@ -1,1 +1,31 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: "Inter", sans-serif;
+  --font-accent: "PressStart2P", fantasy;
+
+  --font-weight-card-text: 400;
+  --font-weight-card-title: 785;
+
+  --themes-background: #fff;
+  --themes-main-color: #000;
+
+  --block-width: 700px;
+
+  --grid-pattern: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    );
+
+  --main-gradient: linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
+
+  --page-background: var(--grid-pattern), var(--main-gradient);
+}
