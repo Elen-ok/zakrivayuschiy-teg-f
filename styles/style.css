@@ -183,6 +183,14 @@
   opacity: 0.5;
 }
 
+@supports (-webkit-text-stroke: 1px #ffffff) or (text-stroke: 1px #ffffff) {
+  .card__label {
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+    paint-order: stroke fill;
+  }
+}
+
 .card__text {
   font-family: "Inter", sans-serif;
   font-variation-settings: "wght" 410;
