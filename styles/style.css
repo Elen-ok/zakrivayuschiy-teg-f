@@ -177,9 +177,6 @@
   text-transform: uppercase;
   color: #000000;
   background: transparent;
-  -webkit-text-stroke: 1px #ffffff;
-  text-stroke: 1px #ffffff;
-  paint-order: stroke fill;
   display: inline-block;
   padding: 0;
   mix-blend-mode: hard-light;
