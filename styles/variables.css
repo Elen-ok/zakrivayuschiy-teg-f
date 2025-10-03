@@ -7,8 +7,13 @@
 
   --themes-background: #fff;
   --themes-main-color: #000;
+  --themes-accent-color: #000;
 
   --block-width: 700px;
+
+  --contour-color: #000000;
+  --animation-fill-color: #ff0000;
+  --sparks-color: #ff0000;
 
   --grid-pattern: repeating-linear-gradient(
       90deg,

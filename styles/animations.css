@@ -1,18 +1,108 @@
-@keyframes sparks-fill {
+/* Анимация сердца */
+.like-icon {
+  --contour-color: #000;
+  --sparks-color: #ff0000;
+  transform-origin: center;
+}
+
+/* Контур сердца */
+.like-icon .contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
+/* Сердцевина - прозрачная по умолчанию */
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+/* Основное тело - прозрачное по умолчанию */
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+/* Искры - скрыты по умолчанию */
+.like-icon .sparks {
+  opacity: 0;
+  fill: var(--sparks-color);
+}
+
+/* Группа для масштабирования */
+.like-icon .heart {
+  transform-origin: center;
+}
+
+/* ===== СОСТОЯНИЕ HOVER ===== */
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition-delay: 0.05s;
+}
+
+/* ===== СОСТОЯНИЕ ACTIVE ===== */
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+/* ===== СОСТОЯНИЕ IS-LIKED (после клика) ===== */
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+/* Анимация масштабирования сердца */
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s 0.1s ease-in;
+}
+
+/* Анимация искр */
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s 0.3s ease-in;
+}
+
+/* Ключевые кадры для анимаций */
+@keyframes heart-scale {
   0% {
-    fill: transparent;
-    opacity: 0;
+    transform: scale(1);
   }
   50% {
-    fill: var(--animation-fill-color, #ff0000);
-    opacity: 0.5;
+    transform: scale(1.5);
   }
   100% {
-    fill: var(--animation-fill-color, #ff0000);
-    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.like-checkbox:checked + .card__icon-button .like-icon .sparks {
-  animation: sparks-fill 0.3s ease-in 0.3s 1;
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
