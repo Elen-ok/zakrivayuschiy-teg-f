@@ -1,20 +1,15 @@
 :root {
   --font-main: "Inter", sans-serif;
   --font-accent: "PressStart2P", fantasy;
-
   --font-weight-card-text: 400;
   --font-weight-card-title: 785;
-
   --themes-background: #fff;
   --themes-main-color: #000;
   --themes-accent-color: #000;
-
   --block-width: 700px;
-
   --contour-color: #000000;
   --animation-fill-color: #ff0000;
   --sparks-color: #ff0000;
-
   --grid-pattern: repeating-linear-gradient(
       90deg,
       #d3d3d3 0px,
