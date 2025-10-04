@@ -1,3 +1,46 @@
+.button {
+  background: var(--themes-background);
+  border: 2px solid var(--themes-main-color);
+  cursor: pointer;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--themes-accent-color);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--themes-main-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.button .button__text,
+.button .save-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--themes-background);
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -21,7 +64,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -233,79 +275,20 @@
   justify-content: center;
 }
 
-.card__like-button,
-.card__save-button,
-.modal__button {
-  background: var(--themes-background);
-  border: 2px solid var(--themes-main-color);
-  cursor: pointer;
-  font-family: var(--font-accent);
-  font-size: 14px;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button:focus,
-.card__save-button:focus,
-.modal__button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--themes-accent-color);
-}
-
-.card__like-button::before,
-.card__save-button::before,
-.modal__button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--themes-main-color);
-  transition: width 0.5s ease-in-out;
-}
-
-.card__like-button:hover::before,
-.card__save-button:hover::before,
-.modal__button:hover::before {
-  width: 100%;
-}
-
-.card__like-button .button__text,
-.card__save-button .button__text,
-.modal__button .modal__button-text,
-.card__save-button .save-icon {
-  position: relative;
-  z-index: 1;
-  color: var(--themes-background);
-  mix-blend-mode: difference;
-  transition: color 0.5s ease-in-out;
-}
-
 .card__like-button {
   width: 130px;
   height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .card__save-button {
   width: 335px;
   height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
 .modal__button {
   width: 293px;
   height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .save-icon {
@@ -412,7 +395,7 @@
 @media (width <= 375px) {
   .content-wrapper {
     max-width: 375px;
-    padding: 0 15px;
+    padding: 0px;
   }
 
   .header.responsive-block,
@@ -462,7 +445,7 @@
   }
 
   .card__text {
-    margin: 25px 25px auto 25px;
+    margin: 25px 25px auto 24px;
     font-size: 18px;
     line-height: 21px;
   }
@@ -474,7 +457,7 @@
   .card__actions {
     padding: 25px 25px 25px;
   }
-
+  
   .card__save-button {
     flex-direction: column;
     width: 100%;
